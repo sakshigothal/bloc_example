@@ -1,5 +1,4 @@
 import 'package:bloc_example/Blocs/switchBloc/switch_bloc.dart';
-import 'package:bloc_example/Models/task_model.dart';
 import 'package:bloc_example/Services/app_router.dart';
 import 'package:bloc_example/Services/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'Blocs/TaskBloc/task_bloc.dart';
-import 'Blocs/counterBloc/counter_bloc.dart';
-import 'Screens/tabs_screen.dart';
-import 'Screens/pending_screen.dart';
-import 'Screens/counter_screen.dart';
+import 'CovidPetient/Screen/covid_listing_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +38,7 @@ class MyApp extends StatelessWidget {
             theme: state.switchValue
                 ? AppThemes.appThemeData[AppTheme.darkTheme]
                 : AppThemes.appThemeData[AppTheme.lightTheme],
-            home: TabsScreen(),
+            home: CovidPage(),
             onGenerateRoute: appRouter.onGenerateRoute,
           );
         },
