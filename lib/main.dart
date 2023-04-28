@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'Blocs/TaskBloc/task_bloc.dart';
-import 'CovidPetient/Screen/covid_listing_screen.dart';
+import 'Screens/tabs_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             theme: state.switchValue
                 ? AppThemes.appThemeData[AppTheme.darkTheme]
                 : AppThemes.appThemeData[AppTheme.lightTheme],
-            home: CovidPage(),
+            home: const TabsScreen(),
             onGenerateRoute: appRouter.onGenerateRoute,
           );
         },
